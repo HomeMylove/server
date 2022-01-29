@@ -16,18 +16,13 @@ module.exports.greeting = (body) => {
     let msg = userId == config.SUPERUSER ? '主人~' : ''
 
     if (rawMsg === '早' || rawMsg === '早上好') {
-        if (msg) {
-            // msg = msg + randomReply(greetingText['morning']) + '\n' + `[CQ:image,file=${config.host}:${config.port}/images/morning3.jpg]`
-            sendMsg('group', groupId, msg + randomReply(greetingText['morning']), '/images/morning3.jpg')
-        } else {
-            // msg = msg + randomReply(greetingText['morning']) + '\n' + `[CQ:image,file=${config.host}:${config.port}/images/morning2.jpg]`
-            sendMsg('group', groupId, msg + randomReply(greetingText['morning']), '/images/morning2.jpg')
-        }
-        // sendMsg('group', groupId, msg)
+        msg = msg + randomReply(greetingText['morning']) + '\n' + '[CQ:image,file=chino/morning.jpg]'
     } else if (rawMsg === '下午好') {
-        sendMsg('group', groupId, msg + randomReply(greetingText['afternoon']))
+        msg = msg + randomReply(greetingText['afternoon']) + '\n' + '[CQ:image,file=chino/afternoon.jpg]'
     } else if (rawMsg === '晚上好') {
-        sendMsg('group', groupId, msg + randomReply(greetingText['night']))
+        msg = msg + randomReply(greetingText['night']) + '\n' + '[CQ:image,file=chino/night.jpg]'
     }
+
+    sendMsg('group', groupId, msg)
 
 }

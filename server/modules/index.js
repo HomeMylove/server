@@ -1,16 +1,15 @@
-const { diceGame } = require('./modules/diceGame')
-const { getWallpaper } = require('./modules/getWallpaper')
-const { autoChat } = require('./modules/autoChat')
-const { greeting } = require('./modules/greeting')
-const { callName } = require('./modules/callName')
-const { rememberMyName, remindMyName } = require('./modules/rememberMyName')
+const diceGame = require('./modules/diceGame/index')
+const getWallpaper = require('./modules/getWallpaper/index')
+const autoChat = require('./modules/autoChat/index')
+const signIn = require('./modules/signIn/index')
+
+const { rememberMyName, remindMyName } = require('./modules/callName/index')
 
 module.exports = {
     diceGame,
     getWallpaper,
     autoChat,
-    greeting,
-    callName,
     rememberMyName,
-    remindMyName
+    remindMyName,
+    signIn
 }

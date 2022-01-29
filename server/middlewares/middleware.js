@@ -1,5 +1,5 @@
-const { groupHandler } = require('./group')
-const { privateHandler } = require('./private')
+const { groupHandler } = require('./common/group')
+const { privateHandler } = require('./common/private')
 
 
 module.exports = {
